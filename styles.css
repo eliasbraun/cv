@@ -4,24 +4,24 @@
   color-scheme: dark light;
   --bg: #0b0c10;
   --fg: #e8e8e6;
-  --muted: #b4b4ae;
-  --rule: rgba(232, 232, 230, 0.16);
+  --muted: #6b6b67;
+  --rule: rgba(232, 232, 230, 0.12);
   --link: #e8e8e6;
   --link-hover: #ffffff;
   --focus: #ffffff;
 
-  --max: 70ch;
+  --max: 62ch;
   --pad: clamp(18px, 4vw, 36px);
   --lh: 1.6;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg: #fbfbf8;
-    --fg: #151515;
-    --muted: #4b4b4b;
-    --rule: rgba(21, 21, 21, 0.12);
-    --link: #151515;
+    --bg: #fafaf8;
+    --fg: #111111;
+    --muted: #888884;
+    --rule: rgba(21, 21, 21, 0.1);
+    --link: #111111;
     --link-hover: #000000;
     --focus: #000000;
   }
@@ -43,9 +43,9 @@ body {
   background: var(--bg);
   color: var(--fg);
   line-height: var(--lh);
-  font-size: 16px;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 15px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -53,79 +53,104 @@ body {
 .container {
   max-width: var(--max);
   margin: 0 auto;
-  padding: var(--pad);
+  padding: calc(var(--pad) * 2) var(--pad) calc(var(--pad) * 3);
 }
 
-.loading {
-  margin: 0;
-  color: var(--muted);
-}
-
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-  padding: 10px 12px;
-  background: var(--fg);
-  color: var(--bg);
-  text-decoration: none;
-  border: 1px solid var(--bg);
-}
-
-.skip-link:focus {
-  left: var(--pad);
-  top: var(--pad);
-  z-index: 10;
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
-}
-
-/* Markdown typography */
+/* ── Typography ───────────────────────────────── */
 
 h1,
 h2,
 h3 {
   margin: 0;
   font-weight: 600;
-  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: clamp(28px, 5vw, 40px);
-  line-height: 1.15;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-  margin-bottom: 8px;
+  font-size: clamp(26px, 5vw, 34px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
 }
 
-h2 {
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-top: 28px;
-  padding-top: 18px;
-  border-top: 1px solid var(--rule);
+/* Role subtitle sits right under the name */
+h1 + p {
+  margin-top: 0;
+  margin-bottom: 0;
   color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0;
 }
 
+/* Bio paragraph */
+h1 + p + p {
+  margin-top: 28px;
+  color: var(--fg);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Section headers: small, uppercase, ruled */
+h2 {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 48px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Job title: same size as body, just bold — no giant heading */
 h3 {
-  font-size: 18px;
-  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 20px;
   margin-bottom: 6px;
+}
+
+h3:first-of-type {
+  margin-top: 0;
 }
 
 p {
   margin: 10px 0;
+  font-size: 14px;
 }
 
 ul {
-  margin: 8px 0 12px;
-  padding-left: 18px;
+  margin: 4px 0 0;
+  padding-left: 16px;
+  color: var(--fg);
+}
+
+ul.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+ul.contact-list li {
+  margin: 0;
+}
+
+ul.contact-list li + li::before {
+  content: "·";
+  color: var(--muted);
+  margin: 0 0.5rem;
 }
 
 li {
-  margin: 6px 0;
+  margin: 5px 0;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--fg) 80%, var(--muted));
 }
+
 
 hr {
   border: 0;
@@ -133,29 +158,17 @@ hr {
   margin: 22px 0;
 }
 
-code,
-pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-  font-size: 0.95em;
-}
-
-pre {
-  padding: 14px;
-  border: 1px solid var(--rule);
-  overflow: auto;
-  border-radius: 8px;
-}
-
 a {
   color: var(--link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--muted);
 }
 
 a:hover {
   color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
 }
 
 a:focus-visible {
@@ -163,19 +176,18 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-/* Make the first paragraph (role line) read like a subtitle */
-h1 + p {
-  margin-top: 0;
-  color: var(--muted);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+a[target="_blank"]::after {
+  content: "↗";
+  font-size: 0.75em;
+  margin-left: 1px;
+  opacity: 0.5;
+  vertical-align: super;
 }
 
-/* Reduce spacing on small screens */
+
+/* ── Responsive ───────────────────────────────── */
 @media (max-width: 420px) {
   h2 {
-    margin-top: 22px;
-    padding-top: 14px;
+    margin-top: 36px;
   }
 }
-
