@@ -14,13 +14,17 @@
   <body>
     <main id="cv" class="container" tabindex="-1">
       <header>
-        <h1>Elias Braun</h1>
+        <h1>Hi, I'm Elias. 👋</h1>
         <p>Frontend &amp; Fullstack Engineer, Berlin</p>
+        <p>I love building scalable web apps that delight users.</p>
       </header>
 
-      <section>
-        <p>Fullstack engineer building fast, accessible web products with measurable impact.</p>
-        <p>Product-minded · Highly motivated · Ownership from idea to production</p>
+      <section class="traits">
+        <p class="inline-list">
+          <span>product-minded</span>
+          <span>strong communicator</span>
+          <span>highly motivated</span>
+        </p>
       </section>
 
       <section aria-labelledby="experience-heading">
@@ -44,12 +48,12 @@
           </dt>
           <dd>
             <p>
-              Legaltech SaaS platform for automating company legal workflows at scale with AI.
+              Legal tech SaaS Startup for automating company legal workflows at scale with AI.
             </p>
             <ul>
-              <li>Built and shipped customer-facing features used by high-profile clients including Parloa, Enpal, Finanzguru, and Upvest.</li>
-              <li>Worked closely with product and design teams to deliver complex workflows with a strong focus on usability and reliability.</li>
-              <li>Improved architecture, performance, and accessibility across a growing B2B platform.</li>
+              <li>Joined as a frontend developer and gradually took full-stack ownership using Ruby on Rails.</li>
+              <li>Built and shipped customer-facing features for clients including Parloa, Enpal, Finanzguru, and Upvest.</li>
+              <li>Improved platform architecture, performance, and accessibility across a growing B2B product.</li>
             </ul>
           </dd>
 
@@ -69,7 +73,7 @@
             >
           </dt>
           <dd>
-            <p>Germany’s largest neighbourhood social network.</p>
+            <p>Europe's largest neighbourhood social network.</p>
             <ul>
               <li>Shipped features for a platform serving ~600k weekly active users and ~2M weekly visitors.</li>
               <li>Contributed to product development at scale, impacting a platform with over 3M registered users.</li>
@@ -94,11 +98,11 @@
           </dt>
           <dd>
             <p>
-              Platform for physical therapists including news, a job marketplace and more.
+              Germany's largest platform for physical therapists.
             </p>
             <ul>
               <li>Owned and rebuilt px.de, a nationwide directory of physical therapy practices and part of physio.de, growing annual users from ~250k to over 1M mainly by implementing a new SEO strategy and a full redesign.</li>
-              <li>Drove product decisions, design, and implementation, working hands-on across the stack and content.</li>
+              <li>Drove product decisions working hands-on across the stack.</li>
               <li>Delivered measurable business impact by aligning technical execution closely with user and market needs.</li>
             </ul>
           </dd>
@@ -106,16 +110,42 @@
       </section>
 
       <section aria-labelledby="skills-heading">
-        <h2 id="skills-heading">Skills</h2>
+        <h2 id="skills-heading">Skills (excerpt)</h2>
         <div class="skills-grid">
-          <span class="skill"><strong>Core</strong>: React · TypeScript · Next.js · Ruby on Rails · Node.js </span>
-          <span class="skill"><strong>Other</strong>: SQL · PHP · Automated Testing · Agile / Scrum</span>
+          <div class="skill">
+            <span class="skill-label">Languages</span>
+            <span class="skill-content">TypeScript · Ruby · SQL · PHP</span>
+          </div>
+          <div class="skill">
+            <span class="skill-label">Frontend</span>
+            <span class="skill-content">React v19 · Next.js v16 · HTML5 · CSS3</span>
+          </div>
+          <div class="skill">
+            <span class="skill-label">Backend</span>
+            <span class="skill-content">Ruby on Rails v8 · Hotwire (Turbo, Stimulus) · Node.js v25 / Express · API design · Server-side rendering</span>
+          </div>
+          <div class="skill">
+            <span class="skill-label">State &amp; Data</span>
+            <span class="skill-content">React Context / Redux / Zustand · REST / GraphQL · Prisma</span>
+          </div>
+          <div class="skill">
+            <span class="skill-label">Testing</span>
+            <span class="skill-content">Unit testing · Integration testing · End‑to‑end testing (Jest, Testing Library, Cypress/Playwright) · RSpec</span>
+          </div>
+          <div class="skill">
+            <span class="skill-label">Tooling</span>
+            <span class="skill-content">Git · npm / pnpm / Bun · Webpack / Vite · ESLint · Prettier · Storybook · Husky</span>
+          </div>
+          <div class="skill">
+            <span class="skill-label">DevOps / Deployment</span>
+            <span class="skill-content">CI/CD basics · Build pipelines · Docker · GitHub Actions / Jenkins · Self-hosted server (Hetzner)</span>
+          </div>
         </div>
       </section>
 
       <section aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Contact</h2>
-        <ul class="contact-list">
+        <h2 id="contact-heading">Contact me</h2>
+        <ul class="contact-list inline-list">
           <li>
             <a href="https://github.com/eliasbraun" target="_blank" rel="noopener noreferrer">GitHub</a>
           </li>
@@ -126,6 +156,7 @@
             <a href="mailto:mailanelias@gmail.com">mailanelias@gmail.com</a>
           </li>
         </ul>
+        <p>Feel free to reach out to connect.</p>
       </section>
     </main>
   </body>
