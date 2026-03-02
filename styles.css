@@ -1,5 +1,3 @@
-/* Brutalist-minimal, text-first. No downloaded fonts. */
-
 :root {
   color-scheme: dark light;
   --bg: #0b0c10;
@@ -72,7 +70,6 @@ h1 {
   margin-bottom: 4px;
 }
 
-/* Role subtitle sits right under the name */
 h1 + p {
   margin-top: 0;
   margin-bottom: 0;
@@ -81,7 +78,6 @@ h1 + p {
   letter-spacing: 0;
 }
 
-/* Bio paragraph */
 h1 + p + p {
   margin-top: 28px;
   color: var(--fg);
@@ -89,7 +85,6 @@ h1 + p + p {
   line-height: 1.7;
 }
 
-/* Section headers: small, uppercase, ruled */
 h2 {
   font-size: 11px;
   font-weight: 500;
@@ -102,7 +97,6 @@ h2 {
   border-bottom: 1px solid var(--rule);
 }
 
-/* Job title: same size as body, just bold — no giant heading */
 h3 {
   font-size: 14px;
   font-weight: 600;
@@ -113,6 +107,35 @@ h3 {
 
 h3:first-of-type {
   margin-top: 0;
+}
+
+.experience-list {
+  margin: 0;
+  padding: 0;
+}
+
+.experience-list dt {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 20px;
+}
+
+.experience-list dt:first-of-type {
+  margin-top: 0;
+}
+
+.experience-list dd {
+  margin: 4px 0 0;
+}
+
+.experience-company {
+  font-weight: 600;
+}
+
+.experience-role,
+.experience-dates {
+  color: var(--muted);
 }
 
 p {
@@ -148,16 +171,14 @@ ul.contact-list li + li::before {
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 8px;
-  margin-top: 8px;
+  gap: 6px;
 }
 
 .skill {
   font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 999px;
   border: 1px solid var(--rule);
   white-space: nowrap;
+  padding: 2px 6px;
 }
 
 li {
@@ -189,26 +210,6 @@ a:hover {
 a:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
-}
-
-a[target="_blank"]::after {
-  content: "↗";
-  font-size: 0.75em;
-  margin-left: 1px;
-  opacity: 0.5;
-  vertical-align: super;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
 
 
