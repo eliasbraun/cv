@@ -7,6 +7,7 @@
   --link: #e8e8e6;
   --link-hover: #ffffff;
   --focus: #ffffff;
+  --accent: var(--fg);
 
   --max: 62ch;
   --pad: clamp(18px, 4vw, 36px);
@@ -15,13 +16,14 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg: #fafaf8;
+    --bg: #ffffff;
     --fg: #111111;
     --muted: #888884;
     --rule: rgba(21, 21, 21, 0.1);
     --link: #111111;
     --link-hover: #000000;
     --focus: #000000;
+    --accent: #000000;
   }
 }
 
@@ -119,6 +121,11 @@ h3:first-of-type {
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 2px;
+  align-items: baseline;
 }
 
 .experience-list dt:first-of-type {
@@ -130,12 +137,38 @@ h3:first-of-type {
 }
 
 .experience-company {
-  font-weight: 600;
+  font-weight: 650;
+  font-size: 15px;
+  color: var(--accent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 50%, transparent);
 }
 
 .experience-role,
 .experience-dates {
   color: var(--muted);
+}
+
+.experience-role {
+  font-size: 13px;
+}
+
+.experience-dates {
+  margin-left: auto;
+  font-size: 12px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .experience-list dt {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-dates {
+    margin-left: 0;
+    text-align: left;
+  }
 }
 
 p {
