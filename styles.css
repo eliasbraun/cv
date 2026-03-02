@@ -1,0 +1,181 @@
+/* Brutalist-minimal, text-first. No downloaded fonts. */
+
+:root {
+  color-scheme: dark light;
+  --bg: #0b0c10;
+  --fg: #e8e8e6;
+  --muted: #b4b4ae;
+  --rule: rgba(232, 232, 230, 0.16);
+  --link: #e8e8e6;
+  --link-hover: #ffffff;
+  --focus: #ffffff;
+
+  --max: 70ch;
+  --pad: clamp(18px, 4vw, 36px);
+  --lh: 1.6;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fbfbf8;
+    --fg: #151515;
+    --muted: #4b4b4b;
+    --rule: rgba(21, 21, 21, 0.12);
+    --link: #151515;
+    --link-hover: #000000;
+    --focus: #000000;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: var(--lh);
+  font-size: 16px;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: var(--pad);
+}
+
+.loading {
+  margin: 0;
+  color: var(--muted);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 10px 12px;
+  background: var(--fg);
+  color: var(--bg);
+  text-decoration: none;
+  border: 1px solid var(--bg);
+}
+
+.skip-link:focus {
+  left: var(--pad);
+  top: var(--pad);
+  z-index: 10;
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Markdown typography */
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.15;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+
+p {
+  margin: 10px 0;
+}
+
+ul {
+  margin: 8px 0 12px;
+  padding-left: 18px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 22px 0;
+}
+
+code,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+pre {
+  padding: 14px;
+  border: 1px solid var(--rule);
+  overflow: auto;
+  border-radius: 8px;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* Make the first paragraph (role line) read like a subtitle */
+h1 + p {
+  margin-top: 0;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+/* Reduce spacing on small screens */
+@media (max-width: 420px) {
+  h2 {
+    margin-top: 22px;
+    padding-top: 14px;
+  }
+}
+
