@@ -282,6 +282,16 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+.education-note {
+  margin-top: 24px;
+  color: var(--muted);
+}
+
+.education-note p {
+  margin: 0;
+  font-size: 12px;
+}
+
 
 /* ── Responsive ───────────────────────────────── */
 @media (max-width: 420px) {
